@@ -13,12 +13,28 @@ class CrudController extends Controller
    }
 
     public function createOffer(){
-         Offer::create([
-            'name' => 'offer1',
-            'price' => '100',
-            'details' => 'details1',
+        
+       return view('create');
+
+    }
+
+    public function storeOffer(Request $request){
+          
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'details' => 'required',
         ]);
         
+
+        Offer::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'details' => $request->details,
+        ]);
+
+        return redirect()->route('listoffers');
+    
     }
 
 

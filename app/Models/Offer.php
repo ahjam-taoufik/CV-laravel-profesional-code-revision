@@ -15,11 +15,12 @@ class Offer extends Model
         'price',
         'details',
     ];
-    protected $hidden = [ //dont show in get
-        'created_at',
-        'updated_at',
-    ];
 
-    public $timestamps = false; //d'ont save in database
+    // protected $hidden = [ //dont show in get
+    //     'created_at',
+    //     'updated_at',
+    // ];
+
+    // public $timestamps = false; //d'ont save in database
 
 }
